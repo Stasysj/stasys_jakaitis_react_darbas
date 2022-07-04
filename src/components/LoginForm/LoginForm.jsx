@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import React from 'react';
 
 import * as Yup from 'yup';
+import { baseUrl, myFetch } from '../../utils';
 
 // -----------------------------
 const initValues = {
@@ -17,9 +18,16 @@ function LoginForm() {
       email: Yup.string().email('Patikrinkite savo email').required(),
       password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
-    onSubmit: async (values) => {},
+    onSubmit: async (values) => {
+      console.log(baseUrl);
+      console.log('values ===', values);
+
+      const fetchResult = await myFetch(`${baseUrl}/login`, 'POST', values);
+
+      console.log('fetchResulg ===', fetchResult);
+    },
   });
-  console.log('formik.values ===', formik.values);
+  // console.log('formik.values ===', formik.values);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <h1 className={css.title}>Welcome back,</h1>
