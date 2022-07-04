@@ -31,6 +31,23 @@ export async function myFetchAuth(url, token, newAddObj) {
     console.log('myFetchAuth error ===', error);
   }
 }
+export async function getFetchAuth(url, token) {
+  try {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    // console.log('options ===', options);
+    const resp = await fetch(url, options);
+    const dataInJs = await resp.json();
+    return dataInJs;
+  } catch (error) {
+    console.log('getFetchAuth error ===', error);
+  }
+}
 
 export const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
