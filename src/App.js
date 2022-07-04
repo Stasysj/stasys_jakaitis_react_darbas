@@ -24,6 +24,9 @@ function App() {
         <Route path={'/register'}>
           <RegisterPage />
         </Route>
+        <Route path='*'>
+          <h2>404 Not found</h2>
+        </Route>
       </Switch>
     </div>
   );
