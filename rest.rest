@@ -18,7 +18,7 @@ POST https://autumn-delicate-wilderness.glitch.me/v1/auth/register
 Content-Type: application/json
 
 {
-"email": "test@email.com", "password": "123456"
+"email": "test@email.lt", "password": "123456"
 }
 
 ###

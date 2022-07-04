@@ -1,19 +1,17 @@
-import css from './LoginForm.module.css';
+import css from './RegisterForm.module.css';
 import { useFormik } from 'formik';
 import React from 'react';
 
 import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
-import { useAuthCtx } from '../../store/authContext';
 
 // -----------------------------
 const initValues = {
-  email: 'test@email.com',
-  password: '123456',
+  email: '',
+  password: '',
 };
 // -------------------------------
-function LoginForm() {
-  const { login } = useAuthCtx();
+function RegisterForm() {
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -21,22 +19,17 @@ function LoginForm() {
       password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
     onSubmit: async (values) => {
-      // console.log(baseUrl);
-      // console.log('values ===', values);
-
-      const fetchResult = await myFetch(`${baseUrl}/login`, 'POST', values);
-      console.log('fetchResult ===', fetchResult);
-      if (fetchResult.err) {
-        console.log('klaida===', fetchResult.err);
-        return;
+      const fetchResult = await myFetch(`${baseUrl}/register`, 'POST', values);
+      console.log('fetchResulRegister ===', fetchResult);
+      if (fetchResult.changes === 1) {
+        console.log('po ifo resultas fetcho');
       }
-      login(fetchResult.token);
     },
   });
   // console.log('formik.values ===', formik.values);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
-      <h1 className={css.title}>Welcome back,</h1>
+      <h1 className={css.title}>Time to feel like home,</h1>
 
       <label className={css.label}>
         <span className={css.span}>Email</span>
@@ -66,12 +59,12 @@ function LoginForm() {
       {/* <input className={css.input} type='email' />
       <input className={css.input} type='password' /> */}
       <p className={css.errorMsg}>{formik.errors.password}</p>
-      <p className={css.forgot_pass}>Forgot password?</p>
+      {/* <p className={css.forgot_pass}>Forgot password?</p> */}
       <button className={css.btn} type='submit'>
-        Login
+        Register
       </button>
     </form>
   );
 }
 
-export default LoginForm;
+export default RegisterForm;
