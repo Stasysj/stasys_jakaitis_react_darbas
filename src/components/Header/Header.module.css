@@ -1,13 +1,15 @@
 .header {
   display: flex;
   justify-content: flex-end;
-  background-color: rgb(85, 178, 85);
+  background-color: rgb(184, 195, 255);
 }
 
 .navLink {
   display: inline-block;
   padding: 1em 1.7em;
-  background-color: rgb(32, 178, 78);
+  background-color: rgb(245, 245, 245);
+  color: rgb(108, 108, 108);
 }
 .navLink:hover {
+  background-color: rgb(171, 184, 255);
 }

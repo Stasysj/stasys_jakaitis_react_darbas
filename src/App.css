@@ -1,13 +1,22 @@
 body {
+  box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* background-color: rgb(219, 219, 219); */
+  background-color: rgb(224, 224, 224);
 }
-
+a {
+  text-decoration: none;
+}
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
 .container {
   display: flex;
-  width: 600px;
-  height: 300px;
-  margin: 25px auto;
+  width: 650px;
+  height: 350px;
+  margin: 50px auto;
   border-radius: 5px;
 
   text-align: center;
@@ -21,9 +30,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(43, 75, 80, 0.529);
+  /* background-color: rgba(43, 75, 80, 0.529); */
+  background: rgba(255, 255, 255, 0.936);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .container_img {
   width: 200px;
