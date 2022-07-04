@@ -6,18 +6,19 @@ import HomePage from './pages/Home/HomePage';
 import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Register/RegisterPage';
 import Header from './components/Header/Header';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <div className='App'>
       <Header />
       <Switch>
-        <Route path={'/home'}>
+        <ProtectedRoute path={'/home'}>
           <HomePage />
-        </Route>
-        <Route path={'/add'}>
+        </ProtectedRoute>
+        <ProtectedRoute path={'/add'}>
           <AddPage />
-        </Route>
+        </ProtectedRoute>
         <Route path={'/login'}>
           <LoginPage />
         </Route>
