@@ -24,7 +24,7 @@ function LoginForm() {
       // console.log(baseUrl);
       // console.log('values ===', values);
 
-      const fetchResult = await myFetch(`${baseUrl}/login`, 'POST', values);
+      const fetchResult = await myFetch(`${baseUrl}/auth/login`, 'POST', values);
       console.log('fetchResult ===', fetchResult);
       if (fetchResult.err) {
         console.log('klaida===', fetchResult.err);

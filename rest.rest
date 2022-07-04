@@ -1,5 +1,5 @@
 GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODAyLCJlbWFpbCI6InRlc3RAZW1haWwubHQiLCJpYXQiOjE2NTY5NjQxNDJ9.GevfPx9pIiXyMaB7H5VkzbjbKXIHLNq-4w6UjEQF2KU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjU2LCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwiaWF0IjoxNjU2OTY5NTg2fQ.u2QXbQ2vW_N-lgX6aTJ_fhvkw6n4N4UbYEq20Iqv7H0
 
 ###
 

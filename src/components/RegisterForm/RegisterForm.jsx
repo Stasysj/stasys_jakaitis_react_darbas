@@ -20,7 +20,7 @@ function RegisterForm() {
       password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
     onSubmit: async (values) => {
-      const fetchResult = await myFetch(`${baseUrl}/register`, 'POST', values);
+      const fetchResult = await myFetch(`${baseUrl}/auth/register`, 'POST', values);
       console.log('fetchResulRegister ===', fetchResult);
       if (fetchResult.changes === 1) {
         console.log('po ifo resultas fetcho');

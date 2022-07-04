@@ -17,7 +17,7 @@ button {
   width: 650px;
   height: 350px;
   margin: 50px auto;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 
   text-align: center;
   background-image: url('bgImg.jpg');
@@ -32,11 +32,25 @@ button {
   justify-content: center;
   /* background-color: rgba(43, 75, 80, 0.529); */
   background: rgba(255, 255, 255, 0.936);
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  /* border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; */
   padding-left: 25px;
   padding-right: 25px;
 }
 .container_img {
-  width: 200px;
+  width: 300px;
+}
+
+.container_form_add {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(43, 75, 80, 0.529); */
+  background: rgba(255, 255, 255, 0.936);
+  /* border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; */
+  padding-left: 25px;
+  padding-right: 25px;
 }
