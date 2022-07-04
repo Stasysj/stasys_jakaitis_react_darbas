@@ -61,6 +61,7 @@
   font-size: 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   text-align: center;
+  font-size: 14px;
 }
 .forgot_pass {
   margin-top: 15px;
@@ -69,4 +70,21 @@
   color: #cfcfcf;
   cursor: pointer;
   text-decoration: underline;
+}
+.errorMsg {
+  margin-top: 0;
+  color: tomato;
+  font-size: 12px;
+  height: 12px;
+}
+.errorInput {
+  /* border-bottom: tomato; */
+  background-color: rgb(255, 231, 226);
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
