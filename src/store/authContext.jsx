@@ -18,7 +18,11 @@ const AuthProvider = ({ children }) => {
     setToken(token);
     localStorage.setItem('token', token);
   };
-  const logout = () => {};
+  const logout = () => {
+    setToken(null);
+
+    localStorage.removeItem('posts-token');
+  };
 
   const ctx = {
     login,
