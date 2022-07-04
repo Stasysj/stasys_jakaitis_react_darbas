@@ -4,6 +4,7 @@ import React from 'react';
 
 import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
+import { useAuthCtx } from '../../store/authContext';
 
 // -----------------------------
 const initValues = {
@@ -12,6 +13,7 @@ const initValues = {
 };
 // -------------------------------
 function LoginForm() {
+  const { login } = useAuthCtx();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -19,12 +21,14 @@ function LoginForm() {
       password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
     onSubmit: async (values) => {
-      console.log(baseUrl);
-      console.log('values ===', values);
+      // console.log(baseUrl);
+      // console.log('values ===', values);
 
       const fetchResult = await myFetch(`${baseUrl}/login`, 'POST', values);
-
       console.log('fetchResulg ===', fetchResult);
+      if (fetchResult.msg === 'Successfully logged in') {
+        login(fetchResult.token);
+      }
     },
   });
   // console.log('formik.values ===', formik.values);
