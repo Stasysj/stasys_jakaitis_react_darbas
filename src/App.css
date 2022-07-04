@@ -1,0 +1,30 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* background-color: rgb(219, 219, 219); */
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  height: 300px;
+  margin: 25px auto;
+  border-radius: 5px;
+
+  text-align: center;
+  background-image: url('bgImg.jpg');
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.container_form {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(43, 75, 80, 0.529);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.container_img {
+  width: 200px;
+}

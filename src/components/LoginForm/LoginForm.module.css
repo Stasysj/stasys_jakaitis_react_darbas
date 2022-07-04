@@ -1,0 +1,25 @@
+.form {
+  text-align: center;
+  /* background-color: aqua; */
+}
+.input {
+  display: block;
+  margin: 10px;
+  font-size: 16px;
+  padding: 0.4em 0.8em;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 4px;
+  /* margin: 10px auto; */
+}
+
+.btn {
+  border: none;
+  color: rgb(33, 27, 27);
+  padding: 0.8em 1.6em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
