@@ -1,7 +1,10 @@
 import React from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import { useAuthCtx } from '../../store/authContext';
 
 function LoginPage() {
+  const { setNav } = useAuthCtx();
+  setNav('login');
   return (
     <div className='container'>
       <div className='container_form'>

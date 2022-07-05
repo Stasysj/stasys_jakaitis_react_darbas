@@ -4,17 +4,24 @@ import { useAuthCtx } from '../../store/authContext';
 import css from './Header.module.css';
 
 function Header() {
-  const { isUserLoggedIn, logout } = useAuthCtx();
+  const { isUserLoggedIn, logout, activNav } = useAuthCtx();
   console.log(isUserLoggedIn);
+  console.log('activNav', activNav);
   return (
     <header className={css.header}>
       <nav>
         {isUserLoggedIn && (
           <>
-            <NavLink className={css.navLink} to='/home'>
+            <NavLink
+              className={activNav !== 'home' ? `${css.navLink}` : `${css.navLinkAktiv}`}
+              to='/home'
+            >
               Home
             </NavLink>
-            <NavLink className={css.navLink} to='/add'>
+            <NavLink
+              className={activNav !== 'add' ? `${css.navLink}` : `${css.navLinkAktiv}`}
+              to='/add'
+            >
               Add
             </NavLink>
             <NavLink onClick={logout} className={css.navLink} to='/login'>
@@ -25,10 +32,16 @@ function Header() {
 
         {!isUserLoggedIn && (
           <>
-            <NavLink className={css.navLink} to='/login'>
+            <NavLink
+              className={activNav !== 'login' ? `${css.navLink}` : `${css.navLinkAktiv}`}
+              to='/login'
+            >
               Login
             </NavLink>
-            <NavLink className={css.navLink} to='/register'>
+            <NavLink
+              className={activNav !== 'register' ? `${css.navLink}` : `${css.navLinkAktiv}`}
+              to='/register'
+            >
               Register
             </NavLink>
           </>

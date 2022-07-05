@@ -6,12 +6,15 @@ const AuthContext = createContext({
   logout() {},
   isUserLoggedIn: '',
   token: null,
+  activNav: '',
+  setNav() {},
 });
 
 AuthContext.displayName = 'AuthContext';
 
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
+  const [activNav, setActivNav] = useState('');
 
   const login = (token) => {
     // console.log('store login token', token);
@@ -24,11 +27,16 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem('token');
   };
 
+  const setNav = (string) => {
+    setActivNav(string);
+  };
   const ctx = {
     login,
     logout,
     isUserLoggedIn: !!token,
     token,
+    activNav,
+    setNav,
   };
   return <AuthContext.Provider value={ctx}>{children}</AuthContext.Provider>;
 };
