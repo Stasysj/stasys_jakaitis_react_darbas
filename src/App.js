@@ -7,6 +7,7 @@ import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Register/RegisterPage';
 import Header from './components/Header/Header';
 import ProtectedRoute from './components/ProtectedRoute';
+import Page from './pages/404Page';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <RegisterPage />
         </Route>
         <Route path='*'>
-          <h2>404 Not found</h2>
+          {/* <h2>404 Not found</h2> */}
+          <Page />
         </Route>
       </Switch>
     </div>

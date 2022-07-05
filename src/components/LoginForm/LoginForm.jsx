@@ -35,14 +35,14 @@ function LoginForm() {
         return;
       }
       login(fetchResult.token);
-      history.push('/home');
+      history.replace('/home');
     },
   });
   // console.log('formik.values ===', formik.values);
   console.log('errorras', error);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
-      <h1 className={css.title}>Welcome back,</h1>
+      <h1 className={css.title}>Welcome back</h1>
 
       <label className={css.label}>
         <span className={css.span}>Email</span>

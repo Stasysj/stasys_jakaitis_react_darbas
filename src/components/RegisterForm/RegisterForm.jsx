@@ -5,6 +5,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
 import toast, { Toaster } from 'react-hot-toast';
+import { useHistory } from 'react-router-dom';
 
 // -----------------------------
 const initValues = {
@@ -13,6 +14,7 @@ const initValues = {
 };
 // -------------------------------
 function RegisterForm() {
+  const history = useHistory();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -24,13 +26,14 @@ function RegisterForm() {
       console.log('fetchResulRegister ===', fetchResult);
       if (fetchResult.changes === 1) {
         console.log('po ifo resultas fetcho');
+        history.replace('/login');
       }
     },
   });
   // console.log('formik.values ===', formik.values);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
-      <h1 className={css.title}>Time to feel like home,</h1>
+      <h1 className={css.title}>Time to feel like home</h1>
 
       <label className={css.label}>
         <span className={css.span}>Email</span>

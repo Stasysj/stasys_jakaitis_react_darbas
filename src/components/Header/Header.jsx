@@ -9,6 +9,10 @@ function Header() {
   console.log('activNav', activNav);
   return (
     <header className={css.header}>
+      <div className={css.img}>
+        <img src='logo1.png' alt='' />
+      </div>
+
       <nav>
         {isUserLoggedIn && (
           <>

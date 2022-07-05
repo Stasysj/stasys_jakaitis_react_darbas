@@ -13,9 +13,9 @@ function ProtectedRoute(props) {
         children
       ) : (
         <>
-          <h2>Please login</h2>
+          <h2>Jus neprisujungęs...</h2>
 
-          <Link to={'/login'}>Login here..</Link>
+          <Link to={'/login'}>Prisijungti čia...</Link>
         </>
       )}
     </Route>

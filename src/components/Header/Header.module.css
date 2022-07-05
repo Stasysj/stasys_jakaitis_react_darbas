@@ -1,7 +1,8 @@
 .header {
   display: flex;
-  justify-content: flex-end;
-  background-color: rgb(184, 195, 255);
+  justify-content: space-between;
+
+  background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(184, 195, 255));
 }
 
 .navLink {
@@ -19,4 +20,16 @@
   display: inline-block;
   padding: 1em 1.7em;
   text-decoration: underline;
+}
+img {
+  padding: 2px;
+  height: 40px;
+  background-color: rgba(169, 169, 169, 0);
+  border-radius: 25px;
+}
+.img {
+  /* background-color: brown; */
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
 }
