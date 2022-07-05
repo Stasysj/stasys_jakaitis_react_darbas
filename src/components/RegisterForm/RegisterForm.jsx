@@ -32,8 +32,24 @@ function RegisterForm() {
         SetError(fetchResult.error);
         return;
       }
-
-      history.replace('/login');
+      if (fetchResult.err) {
+        console.log('klaida===', fetchResult.err);
+        // toast.error(fetchResult.err, {
+        //   duration: 5000,
+        //   position: 'top-center',
+        // });
+        SetError(fetchResult.err);
+        return;
+      }
+      //   const notify = () =>
+      toast.success('Registracija sekminga,tuoj busite perkelti i Login puslapi', {
+        duration: 5000,
+        position: 'top-center',
+      });
+      //   notify();
+      setTimeout(() => {
+        history.replace('/login');
+      }, 5000);
 
       //   if (fetchResult.changes === 1) {
       //     console.log('po ifo resultas fetcho');
@@ -44,6 +60,7 @@ function RegisterForm() {
   // console.log('formik.values ===', formik.values);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
+      <Toaster />
       <h1 className={css.title}>Time to feel like home</h1>
 
       <label className={css.label}>

@@ -7,5 +7,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* flex-wrap: wrap; */
+  max-width: 150px;
   /* border: 1px solid black; */
+}
+.description {
+  color: rgb(108, 108, 108);
+  font-size: 12px;
+}
+.title {
+  color: rgb(108, 108, 108);
+  font-size: 16px;
+  font-weight: 200;
+}
+.line {
+  height: 2px;
+  background-color: rgb(108, 108, 108);
+  width: 80%;
 }

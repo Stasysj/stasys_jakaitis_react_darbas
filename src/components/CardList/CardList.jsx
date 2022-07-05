@@ -31,7 +31,7 @@ function CardList() {
   }, []);
   return (
     <div className={css.cardList}>
-      {/* <h1>Skills:</h1> */}
+      <h1 className={css.title}>Skills:</h1>
 
       <div className={css.card_container}>
         {error ? (

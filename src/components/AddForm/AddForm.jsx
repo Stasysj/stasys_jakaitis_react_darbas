@@ -1,7 +1,7 @@
 import css from './AddForm.module.css';
 import { useFormik } from 'formik';
 import React from 'react';
-
+import toast, { Toaster } from 'react-hot-toast';
 import * as Yup from 'yup';
 import { baseUrl, myFetchAuth } from '../../utils';
 import { useAuthCtx } from '../../store/authContext';
@@ -35,8 +35,17 @@ function AddForm() {
         SetError(fetchResult.error);
         return;
       }
+      //   const notify = () =>
+      toast.success('Skillsas pridetas,tuoj busite perkelti i pagridini puslapi', {
+        duration: 5000,
+        position: 'top-center',
+      });
+      //   notify();
 
-      history.push('/home');
+      setTimeout(() => {
+        history.replace('/home');
+      }, 5000);
+      //   history.push('/home');
       //   if (fetchResult.err) {
       //     console.log('klaida===', fetchResult.err);
       //     return;
@@ -48,7 +57,7 @@ function AddForm() {
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <h1 className={css.title}>Add skills</h1>
-
+      <Toaster />
       <label className={css.label}>
         <span className={css.span}>Title</span>
         <input
