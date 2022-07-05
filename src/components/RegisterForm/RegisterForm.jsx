@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
 import toast, { Toaster } from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 // -----------------------------
 const initValues = {
@@ -15,6 +16,7 @@ const initValues = {
 // -------------------------------
 function RegisterForm() {
   const history = useHistory();
+  const [error, SetError] = useState('');
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -22,12 +24,21 @@ function RegisterForm() {
       password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
     onSubmit: async (values) => {
+      SetError('');
       const fetchResult = await myFetch(`${baseUrl}/auth/register`, 'POST', values);
       console.log('fetchResulRegister ===', fetchResult);
-      if (fetchResult.changes === 1) {
-        console.log('po ifo resultas fetcho');
-        history.replace('/login');
+      if (fetchResult.error) {
+        console.log('klaida===', fetchResult.error);
+        SetError(fetchResult.error);
+        return;
       }
+
+      history.replace('/login');
+
+      //   if (fetchResult.changes === 1) {
+      //     console.log('po ifo resultas fetcho');
+      //     history.replace('/login');
+      //   }
     },
   });
   // console.log('formik.values ===', formik.values);
@@ -58,10 +69,8 @@ function RegisterForm() {
           name='password'
         />
       </label>
-      {/* <input className={css.input} type='email' />
-      <input className={css.input} type='password' /> */}
       <p className={css.errorMsg}>{formik.errors.password}</p>
-      {/* <p className={css.forgot_pass}>Forgot password?</p> */}
+      {error && <p className={css.errorMsg}>{error}</p>}
       <button className={css.btn} type='submit'>
         Register
       </button>

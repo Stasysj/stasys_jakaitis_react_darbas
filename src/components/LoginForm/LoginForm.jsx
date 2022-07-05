@@ -69,8 +69,7 @@ function LoginForm() {
           placeholder='Your password'
         />
       </label>
-      {/* <input className={css.input} type='email' />
-      <input className={css.input} type='password' /> */}
+
       <p className={css.errorMsg}>{formik.errors.password}</p>
       {error && <p className={css.errorMsg}>{error}</p>}
 
