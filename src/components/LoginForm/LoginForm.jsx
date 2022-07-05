@@ -1,19 +1,22 @@
 import css from './LoginForm.module.css';
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 
 import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
 import { useAuthCtx } from '../../store/authContext';
+import { useHistory } from 'react-router-dom';
 
 // -----------------------------
 const initValues = {
-  email: 'test@email.com',
+  email: 'qqqq@aaa.com',
   password: '123456',
 };
 // -------------------------------
 function LoginForm() {
   const { login } = useAuthCtx();
+  const history = useHistory();
+  const [error, SetError] = useState('');
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -23,17 +26,20 @@ function LoginForm() {
     onSubmit: async (values) => {
       // console.log(baseUrl);
       // console.log('values ===', values);
-
+      SetError('');
       const fetchResult = await myFetch(`${baseUrl}/auth/login`, 'POST', values);
       console.log('fetchResult ===', fetchResult);
-      if (fetchResult.err) {
-        console.log('klaida===', fetchResult.err);
+      if (fetchResult.error) {
+        console.log('klaida===', fetchResult.error);
+        SetError(fetchResult.error);
         return;
       }
       login(fetchResult.token);
+      history.push('/home');
     },
   });
   // console.log('formik.values ===', formik.values);
+  console.log('errorras', error);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <h1 className={css.title}>Welcome back,</h1>
@@ -66,6 +72,8 @@ function LoginForm() {
       {/* <input className={css.input} type='email' />
       <input className={css.input} type='password' /> */}
       <p className={css.errorMsg}>{formik.errors.password}</p>
+      {error && <p className={css.errorMsg}>{error}</p>}
+
       <p className={css.forgot_pass}>Forgot password?</p>
       <button className={css.btn} type='submit'>
         Login

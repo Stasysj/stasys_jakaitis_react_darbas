@@ -1,14 +1,10 @@
 import React from 'react';
-import CardList from '../../components/Card/CardList';
+import CardList from '../../components/CardList/CardList';
 
 function HomePage() {
   return (
-    <div className='container'>
-      <div className='container_form_add'>
-        <CardList />
-      </div>
-
-      {/* <div className='container_img_full'></div> */}
+    <div className='container_home'>
+      <CardList />
     </div>
   );
 }

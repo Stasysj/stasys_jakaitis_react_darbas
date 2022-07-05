@@ -3,8 +3,10 @@ import { useFormik } from 'formik';
 import React from 'react';
 
 import * as Yup from 'yup';
-import { baseUrl, myFetch, myFetchAuth } from '../../utils';
+import { baseUrl, myFetchAuth } from '../../utils';
 import { useAuthCtx } from '../../store/authContext';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 // -----------------------------
 const initValues = {
@@ -14,6 +16,8 @@ const initValues = {
 // -------------------------------
 function AddForm() {
   const { token } = useAuthCtx();
+  const history = useHistory();
+  const [error, SetError] = useState('');
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -23,9 +27,16 @@ function AddForm() {
     onSubmit: async (values) => {
       // console.log(baseUrl);
       // console.log('values ===', values);
-
+      SetError('');
       const fetchResult = await myFetchAuth(`${baseUrl}/content/skills`, token, values);
       console.log('fetchResult ===', fetchResult);
+      if (fetchResult.error) {
+        console.log('klaida===', fetchResult.error);
+        SetError(fetchResult.error);
+        return;
+      }
+
+      history.push('/home');
       //   if (fetchResult.err) {
       //     console.log('klaida===', fetchResult.err);
       //     return;
@@ -67,6 +78,7 @@ function AddForm() {
       <input className={css.input} type='password' /> */}
       <p className={css.errorMsg}>{formik.errors.description}</p>
       {/* <p className={css.forgot_pass}>Forgot password?</p> */}
+      {error && <p className={css.errorMsg}>{error}</p>}
       <button className={css.btn} type='submit'>
         Add
       </button>
