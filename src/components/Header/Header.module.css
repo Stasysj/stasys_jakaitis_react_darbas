@@ -8,14 +8,14 @@
 .navLink {
   display: inline-block;
   padding: 1em 1.7em;
-  background-color: rgb(245, 245, 245);
+  /* background-color: rgb(245, 245, 245); */
   color: rgb(108, 108, 108);
 }
 .navLink:hover {
   background-color: rgb(171, 184, 255);
 }
 .navLinkAktiv {
-  background-color: rgb(245, 245, 245);
+  /* background-color: rgb(245, 245, 245); */
   color: rgb(108, 108, 108);
   display: inline-block;
   padding: 1em 1.7em;

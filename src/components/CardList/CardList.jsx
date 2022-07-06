@@ -6,6 +6,7 @@ import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, getFetchAuth } from '../../utils';
 import Card from '../Card/Card';
 import { Link } from 'react-router-dom';
+import Search from '../Search/Search';
 
 function CardList() {
   const { token } = useAuthCtx();
@@ -32,6 +33,7 @@ function CardList() {
   return (
     <div className={css.cardList}>
       <h1 className={css.title}>Skills:</h1>
+      <Search />
 
       <div className={css.card_container}>
         {error ? (

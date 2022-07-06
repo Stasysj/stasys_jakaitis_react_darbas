@@ -17,6 +17,7 @@ const initValues = {
 function RegisterForm() {
   const history = useHistory();
   const [error, SetError] = useState('');
+
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -26,7 +27,7 @@ function RegisterForm() {
     onSubmit: async (values) => {
       SetError('');
       const fetchResult = await myFetch(`${baseUrl}/auth/register`, 'POST', values);
-      console.log('fetchResulRegister ===', fetchResult);
+      console.log('fetchResulRegister ===', fetchResult.changes);
       if (fetchResult.error) {
         console.log('klaida===', fetchResult.error);
         SetError(fetchResult.error);
@@ -41,15 +42,18 @@ function RegisterForm() {
         SetError(fetchResult.err);
         return;
       }
-      //   const notify = () =>
-      toast.success('Registracija sekminga,tuoj busite perkelti i Login puslapi', {
-        duration: 5000,
-        position: 'top-center',
-      });
-      //   notify();
-      setTimeout(() => {
-        history.replace('/login');
-      }, 5000);
+
+      const notify = () =>
+        toast.success('Registracija sekminga,tuoj busite perkelti i Login puslapi', {
+          duration: 5000,
+          position: 'top-center',
+        });
+
+      fetchResult.changes === 1 &&
+        notify() &&
+        setTimeout(() => {
+          history.replace('/login');
+        }, 5000);
 
       //   if (fetchResult.changes === 1) {
       //     console.log('po ifo resultas fetcho');
