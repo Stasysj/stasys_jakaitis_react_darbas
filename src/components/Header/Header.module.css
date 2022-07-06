@@ -21,12 +21,14 @@
   padding: 1em 1.7em;
   text-decoration: underline;
 }
-img {
+.logo {
   padding: 2px;
   height: 40px;
   background-color: rgba(169, 169, 169, 0);
   border-radius: 25px;
+  cursor: pointer;
 }
+
 .img {
   /* background-color: brown; */
   display: flex;

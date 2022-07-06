@@ -8,8 +8,10 @@ import RegisterPage from './pages/Register/RegisterPage';
 import Header from './components/Header/Header';
 import ProtectedRoute from './components/ProtectedRoute';
 import Page from './pages/404Page';
+import { useAuthCtx } from './store/authContext';
 
 function App() {
+  const { isUserLoggedIn } = useAuthCtx();
   return (
     <div className='App'>
       <Header />
@@ -27,8 +29,7 @@ function App() {
           <RegisterPage />
         </Route>
         <Route path='*'>
-          {/* <h2>404 Not found</h2> */}
-          <Page />
+          <h2>404 Not found</h2>
         </Route>
       </Switch>
     </div>

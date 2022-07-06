@@ -25,38 +25,28 @@ function AddForm() {
       description: Yup.string().min(4, 'Maziausiai 4 simboliai').max(50).required(),
     }),
     onSubmit: async (values) => {
-      // console.log(baseUrl);
-      // console.log('values ===', values);
       SetError('');
       const fetchResult = await myFetchAuth(`${baseUrl}/content/skills`, token, values);
       console.log('fetchResult ===', fetchResult);
       if (fetchResult.error) {
-        console.log('klaida===', fetchResult.error);
         SetError(fetchResult.error);
         return;
       }
-      //   const notify = () =>
+      // ------------------------------
       toast.success('Skillsas pridetas,tuoj busite perkelti i pagridini puslapi', {
         duration: 5000,
         position: 'top-center',
       });
-      //   notify();
 
       setTimeout(() => {
-        history.replace('/home');
+        history.replace('/');
       }, 5000);
-      //   history.push('/home');
-      //   if (fetchResult.err) {
-      //     console.log('klaida===', fetchResult.err);
-      //     return;
-      //   }
-      //   login(fetchResult.token);
     },
   });
-  // console.log('formik.values ===', formik.values);
+  // ---------------------------
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
-      <h1 className={css.title}>Add skills</h1>
+      <h1 className={css.title}>Add...</h1>
       <Toaster />
       <label className={css.label}>
         <span className={css.span}>Title</span>
@@ -83,10 +73,7 @@ function AddForm() {
           name='description'
         />
       </label>
-      {/* <input className={css.input} type='email' />
-      <input className={css.input} type='password' /> */}
       <p className={css.errorMsg}>{formik.errors.description}</p>
-      {/* <p className={css.forgot_pass}>Forgot password?</p> */}
       {error && <p className={css.errorMsg}>{error}</p>}
       <button className={css.btn} type='submit'>
         Add

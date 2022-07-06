@@ -1,22 +1,28 @@
 // import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import { useAuthCtx } from '../../store/authContext';
 import css from './Header.module.css';
 
 function Header() {
+  const history = useHistory();
   const { isUserLoggedIn, logout, activNav } = useAuthCtx();
   console.log(isUserLoggedIn);
   console.log('activNav', activNav);
+
+  function onClickHandler() {
+    history.replace('/');
+  }
+
   return (
     <header className={css.header}>
       <div className={css.img}>
-        <img src='logo1.png' alt='' />
+        <img className={css.logo} onClick={onClickHandler} src='logo1.png' alt='Logo' />
       </div>
 
       <nav>
         {isUserLoggedIn && (
           <>
-            <NavLink className='navLink' to='/'>
+            <NavLink className='navLink' exact to='/'>
               Home
             </NavLink>
             <NavLink className='navLink' to='/add'>

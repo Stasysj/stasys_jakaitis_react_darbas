@@ -47,7 +47,7 @@ function CardList() {
 
   return (
     <div className={css.cardList}>
-      <h1 className={css.title}>Skills:</h1>
+      <h1 className={css.title}>Sąrašas:</h1>
       <>
         <span>
           <i className={`fa fa-search ${css.icon}`} aria-hidden='true'></i>
@@ -67,7 +67,7 @@ function CardList() {
         ) : error ? (
           <h1>{error}</h1>
         ) : filt.length === 0 ? (
-          <h1>Skillsu nera.</h1>
+          <h1>Sąrašas tuščias.</h1>
         ) : (
           filt.length > 0 && filt.map((skObj) => <Card key={skObj.id} {...skObj} />)
         )}

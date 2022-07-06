@@ -93,7 +93,7 @@ function RegisterForm() {
       <p className={css.errorMsg}>{formik.errors.password}</p>
       {error && <p className={css.errorMsg}>{error}</p>}
       <button className={css.btn} type='submit'>
-        Register
+        SIGN UP
       </button>
     </form>
   );

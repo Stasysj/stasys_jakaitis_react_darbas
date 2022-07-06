@@ -96,7 +96,7 @@ function LoginForm() {
 
       <p className={css.forgot_pass}>Forgot password?</p>
       <button className={css.btn} type='submit'>
-        Login
+        SIGN IN
       </button>
     </form>
   );
