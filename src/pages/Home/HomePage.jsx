@@ -3,8 +3,8 @@ import CardList from '../../components/CardList/CardList';
 import { useAuthCtx } from '../../store/authContext';
 
 function HomePage() {
-  const { setNav } = useAuthCtx();
-  setNav('home');
+  // const { setNav } = useAuthCtx();
+  // setNav('home');
   return (
     <div className='container_home'>
       <CardList />

@@ -16,19 +16,13 @@ function Header() {
       <nav>
         {isUserLoggedIn && (
           <>
-            <NavLink
-              className={activNav !== 'home' ? `${css.navLink}` : `${css.navLinkAktiv}`}
-              to='/home'
-            >
+            <NavLink className='navLink' to='/home'>
               Home
             </NavLink>
-            <NavLink
-              className={activNav !== 'add' ? `${css.navLink}` : `${css.navLinkAktiv}`}
-              to='/add'
-            >
+            <NavLink className='navLink' to='/add'>
               Add
             </NavLink>
-            <NavLink onClick={logout} className={css.navLink} to='/login'>
+            <NavLink onClick={logout} className='navLink' to='/login'>
               Logout
             </NavLink>
           </>
@@ -36,16 +30,10 @@ function Header() {
 
         {!isUserLoggedIn && (
           <>
-            <NavLink
-              className={activNav !== 'login' ? `${css.navLink}` : `${css.navLinkAktiv}`}
-              to='/login'
-            >
+            <NavLink className='navLink' to='/login'>
               Login
             </NavLink>
-            <NavLink
-              className={activNav !== 'register' ? `${css.navLink}` : `${css.navLinkAktiv}`}
-              to='/register'
-            >
+            <NavLink className='navLink' to='/register'>
               Register
             </NavLink>
           </>
