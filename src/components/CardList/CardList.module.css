@@ -7,7 +7,7 @@
   /* width: 100%; */
 }
 .cardList {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   max-width: 650px;
   /* height: 100%; */
   margin: 5px auto;
@@ -21,4 +21,12 @@
   text-align: center;
   color: rgb(108, 108, 108);
   /* display: inline-block; */
+}
+.search {
+  color: rgb(108, 108, 108);
+  border-bottom: 1px solid rgb(108, 108, 108);
+  margin-bottom: 5px;
+}
+.icon {
+  color: rgb(108, 108, 108);
 }
