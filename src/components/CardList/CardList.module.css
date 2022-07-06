@@ -1,0 +1,27 @@
+.card_container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cardList {
+  max-width: 650px;
+  margin: 5px auto;
+  background: rgba(255, 255, 255, 0.721);
+  text-align: center;
+  padding: 15px;
+}
+.title {
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  color: rgb(108, 108, 108);
+}
+.search {
+  color: rgb(108, 108, 108);
+  border-bottom: 1px solid rgb(108, 108, 108);
+  margin-bottom: 5px;
+}
+.icon {
+  color: rgb(108, 108, 108);
+}

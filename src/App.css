@@ -1,0 +1,77 @@
+body {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(224, 224, 224);
+}
+a {
+  text-decoration: none;
+}
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+.container {
+  display: flex;
+  width: 650px;
+  height: 350px;
+  margin: 50px auto;
+
+  text-align: center;
+  background-image: url('bgImg.jpg');
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.container_home {
+  height: 100vh;
+  margin: 5px auto;
+  background-image: url('bgImg.jpg');
+  background-size: cover;
+  padding-top: 10px;
+}
+.container_form {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.936);
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.container_img {
+  width: 300px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  text-shadow: -2px -1px 9px #000000;
+  font-size: 25px;
+}
+
+.container_form_add {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.936);
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.navLink {
+  display: inline-block;
+  padding: 1em 1.7em;
+  color: rgb(108, 108, 108);
+}
+.navLink.active {
+  color: rgb(108, 108, 108);
+  display: inline-block;
+  padding: 1em 1.7em;
+  text-decoration: underline;
+}
+.navLink:hover {
+  background-color: rgb(171, 184, 255);
+}

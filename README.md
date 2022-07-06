@@ -1,15 +1,23 @@
-# Getting Started with Create React App
+# Stasys Jakaitis React atsiskaitymo darbas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src= src/bgImg.jpg width="500"  />
 
-## Available Scripts
+## Paleidimas
 
-In the project directory, you can run:
+`npm i`
+`npm start`
 
-### `npm start`
+App'as pasileidžia [http://localhost:3000](http://localhost:3000) jusų naršyklėje.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Puslapių struktūra
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+
+- **Register**
+  Šis puslapis turi meniu juostą (logotipas, login ir register nuorodos), formą su el. paštu ir slaptažodžiu – įvedus kreipiasi į serverį ir registruoja vartotoją.
+- **Login**
+  Šis puslapis turi meniu juostą (logotipas, login ir register nuorodos), formą su el. paštu ir slaptažodžiu – įvedus kreipiasi į serverį ir jei vartotojas yra registre-prilogina.
+- **Home** (patekti galima tik prisijungus)
+  Šis puslapis turi meniu juostą (logotipas, home ir add nuorodos ) bei kortelėse (t.y. stačiakampiuose,) atvaizduos įrašus (atsisiųstus iš [https://autumn-delicate-wilderness.glitch.me/v1/content/skills](https://react-test-sejo6.ondigitalocean.app/v1/content/skills)).
+- **Add** (patekti galima tik prisijungus)
+  Šis puslapis turi meniu juostą (logotipas, home ir add nuorodos) bei formą (t.y. title – input text ir description - textarea), kuriuos užpildžius – išsiųs į serverį ([https://autumn-delicate-wilderness.glitch.me/v1/content/skills](https://react-test-sejo6.ondigitalocean.app/v1/content/skills)).
