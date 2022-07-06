@@ -17,7 +17,6 @@ const AuthProvider = ({ children }) => {
   const [activNav, setActivNav] = useState('');
 
   const login = (token) => {
-    // console.log('store login token', token);
     setToken(token);
     localStorage.setItem('token', token);
   };

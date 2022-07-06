@@ -22,11 +22,9 @@ function CardList() {
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
-  // console.log('token', token);
-
   const getSkills = async () => {
     const fetchResult = await getFetchAuth(`${baseUrl}/content/skills`, token);
-    console.log('fetchResult ===', fetchResult);
+
     if (Array.isArray(fetchResult)) {
       setSkills(fetchResult);
       setFilt(fetchResult);

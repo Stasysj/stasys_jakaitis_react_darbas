@@ -1,28 +1,4 @@
-/* .form {
-  text-align: center;
-  
-}
-.input {
-  display: block;
-  margin: 10px;
-  font-size: 16px;
-  padding: 0.4em 0.8em;
-  border: 1px solid rgb(205, 205, 205);
-  border-radius: 4px;
-
-} */
-
 .btn {
-  /* border: none;
-    color: rgb(33, 27, 27);
-    padding: 0.4em 0.8em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 25px; */
   display: block;
   margin: 0 auto;
   width: 260px;
@@ -32,7 +8,6 @@
   font-size: 15px;
   cursor: pointer;
   background-color: rgb(252, 198, 134);
-  /* margin-bottom: 5px; */
 }
 .title {
   width: 100%;
@@ -71,7 +46,6 @@
   height: 12px;
 }
 .errorInput {
-  /* border-bottom: tomato; */
   background-color: rgb(255, 231, 226);
   display: block;
   width: 100%;

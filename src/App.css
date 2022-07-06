@@ -17,7 +17,6 @@ button {
   width: 650px;
   height: 350px;
   margin: 50px auto;
-  /* border-radius: 5px; */
 
   text-align: center;
   background-image: url('bgImg.jpg');
@@ -25,15 +24,11 @@ button {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .container_home {
-  /* width: 100%; */
-
   height: 100vh;
   margin: 5px auto;
   background-image: url('bgImg.jpg');
   background-size: cover;
   padding-top: 10px;
-
-  /* padding: 15px; */
 }
 .container_form {
   height: 100%;
@@ -41,10 +36,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: rgba(43, 75, 80, 0.529); */
   background: rgba(255, 255, 255, 0.936);
-  /* border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; */
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -55,7 +47,6 @@ button {
   justify-content: center;
   color: rgb(255, 255, 255);
   text-shadow: -2px -1px 9px #000000;
-
   font-size: 25px;
 }
 
@@ -65,29 +56,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: rgba(43, 75, 80, 0.529); */
   background: rgba(255, 255, 255, 0.936);
-  /* border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; */
   padding-left: 25px;
   padding-right: 25px;
 }
-/* .container_form_cardList {
-  height: 100%;
-  width: 100%;
-  
-  align-items: center;
-  justify-content: center;
 
-  background: rgba(255, 255, 255, 0.936);
-
-  padding-left: 25px;
-  padding-right: 25px;
-} */
 .navLink {
   display: inline-block;
   padding: 1em 1.7em;
-  /* background-color: rgb(245, 245, 245); */
   color: rgb(108, 108, 108);
 }
 .navLink.active {

@@ -27,20 +27,19 @@ function AddForm() {
     onSubmit: async (values) => {
       SetError('');
       const fetchResult = await myFetchAuth(`${baseUrl}/content/skills`, token, values);
-      console.log('fetchResult ===', fetchResult);
       if (fetchResult.error) {
         SetError(fetchResult.error);
         return;
       }
       // ------------------------------
-      toast.success('Skillsas pridetas,tuoj busite perkelti i pagridini puslapi', {
-        duration: 5000,
+      toast.success('Įrašas sėkmingai pridetas, tuoj busite peradresuoti i pagridinį puslapį.', {
+        duration: 4000,
         position: 'top-center',
       });
 
       setTimeout(() => {
         history.replace('/');
-      }, 5000);
+      }, 4000);
     },
   });
   // ---------------------------

@@ -27,25 +27,18 @@ function RegisterForm() {
     onSubmit: async (values) => {
       SetError('');
       const fetchResult = await myFetch(`${baseUrl}/auth/register`, 'POST', values);
-      console.log('fetchResulRegister ===', fetchResult.changes);
       if (fetchResult.error) {
-        console.log('klaida===', fetchResult.error);
         SetError(fetchResult.error);
         return;
       }
       if (fetchResult.err) {
-        console.log('klaida===', fetchResult.err);
-        // toast.error(fetchResult.err, {
-        //   duration: 5000,
-        //   position: 'top-center',
-        // });
         SetError(fetchResult.err);
         return;
       }
 
       const notify = () =>
-        toast.success('Registracija sekminga,tuoj būsite peradresuoti i Login puslapį', {
-          duration: 5000,
+        toast.success('Registracija sėkminga,tuoj būsite peradresuoti i Login puslapį.', {
+          duration: 4000,
           position: 'top-center',
         });
 
@@ -53,15 +46,9 @@ function RegisterForm() {
         notify() &&
         setTimeout(() => {
           history.replace('/login');
-        }, 5000);
-
-      //   if (fetchResult.changes === 1) {
-      //     console.log('po ifo resultas fetcho');
-      //     history.replace('/login');
-      //   }
+        }, 4000);
     },
   });
-  // console.log('formik.values ===', formik.values);
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <Toaster />

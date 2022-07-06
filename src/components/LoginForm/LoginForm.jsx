@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 
 // -----------------------------
 const initValues = {
-  email: 'qqqq@aaa.com',
+  email: 'test1@test.lt',
   password: '123456',
 };
 // -------------------------------
@@ -24,30 +24,20 @@ function LoginForm() {
       password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
     onSubmit: async (values) => {
-      // console.log(baseUrl);
-      // console.log('values ===', values);
       SetError('');
       const fetchResult = await myFetch(`${baseUrl}/auth/login`, 'POST', values);
-      console.log('fetchResult ===', fetchResult);
       if (fetchResult.error) {
-        console.log('klaida===', fetchResult.error);
         SetError(fetchResult.error);
         return;
       }
       login(fetchResult.token);
-      // history.replace('/');
       if (fetchResult.err) {
-        console.log('klaida===', fetchResult.err);
-        // toast.error(fetchResult.err, {
-        //   duration: 5000,
-        //   position: 'top-center',
-        // });
         SetError(fetchResult.err);
         return;
       }
       const notify = () =>
-        toast.success('Prisijungėte sėkmingai, tuoj būsite peadresuotas į pagrindinį puslapį', {
-          duration: 5000,
+        toast.success('Prisijungėte sėkmingai, tuoj būsite peadresuotas į pagrindinį puslapį.', {
+          duration: 4000,
           position: 'top-center',
         });
 
@@ -55,11 +45,9 @@ function LoginForm() {
         notify() &&
         setTimeout(() => {
           history.replace('/');
-        }, 5000);
+        }, 4000);
     },
   });
-  // console.log('formik.values ===', formik.values);
-  console.log('errorras', error);
 
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>

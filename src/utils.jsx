@@ -5,13 +5,10 @@ export async function myFetch(url, method = 'GET', data = null) {
     };
     options.method = method === 'POST' ? 'POST' : 'GET';
     options.body = data ? JSON.stringify(data) : null;
-    // console.log('options ===', options);
     const resp = await fetch(url, options);
     const dataInJs = await resp.json();
     return dataInJs;
-  } catch (error) {
-    console.log('myFetch error ===', error);
-  }
+  } catch (error) {}
 }
 export async function myFetchAuth(url, token, newAddObj) {
   try {
@@ -23,13 +20,10 @@ export async function myFetchAuth(url, token, newAddObj) {
       },
       body: JSON.stringify(newAddObj),
     };
-    // console.log('options ===', options);
     const resp = await fetch(url, options);
     const dataInJs = await resp.json();
     return dataInJs;
-  } catch (error) {
-    console.log('myFetchAuth error ===', error);
-  }
+  } catch (error) {}
 }
 export async function getFetchAuth(url, token) {
   try {
@@ -40,13 +34,10 @@ export async function getFetchAuth(url, token) {
         Authorization: `Bearer ${token}`,
       },
     };
-    // console.log('options ===', options);
     const resp = await fetch(url, options);
     const dataInJs = await resp.json();
     return dataInJs;
-  } catch (error) {
-    console.log('getFetchAuth error ===', error);
-  }
+  } catch (error) {}
 }
 
 export const baseUrl = process.env.REACT_APP_BACKEND_URL;

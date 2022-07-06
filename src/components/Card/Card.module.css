@@ -1,15 +1,11 @@
 .card {
   background-color: rgba(184, 195, 255, 0.598);
-  /* max-width: 100%; */
-  /* height: 200px; */
-  /* overflow: hidden; */
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* flex-wrap: wrap; */
+
   max-width: 150px;
-  /* border: 1px solid black; */
 }
 .description {
   color: rgb(108, 108, 108);

@@ -1,15 +1,11 @@
 .card_container {
   display: flex;
-  /* grid-template-columns: 1fr 1fr 1fr; */
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  /* width: 100%; */
 }
 .cardList {
-  /* box-sizing: border-box; */
   max-width: 650px;
-  /* height: 100%; */
   margin: 5px auto;
   background: rgba(255, 255, 255, 0.721);
   text-align: center;
@@ -20,7 +16,6 @@
   font-size: 26px;
   text-align: center;
   color: rgb(108, 108, 108);
-  /* display: inline-block; */
 }
 .search {
   color: rgb(108, 108, 108);
