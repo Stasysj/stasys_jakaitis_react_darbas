@@ -16,7 +16,7 @@ function Header() {
       <nav>
         {isUserLoggedIn && (
           <>
-            <NavLink className='navLink' to='/home'>
+            <NavLink className='navLink' to='/'>
               Home
             </NavLink>
             <NavLink className='navLink' to='/add'>

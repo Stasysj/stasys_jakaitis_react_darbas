@@ -1,7 +1,7 @@
 import css from './LoginForm.module.css';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
-
+import toast, { Toaster } from 'react-hot-toast';
 import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
 import { useAuthCtx } from '../../store/authContext';
@@ -35,15 +35,36 @@ function LoginForm() {
         return;
       }
       login(fetchResult.token);
-      history.replace('/home');
+      // history.replace('/');
+      if (fetchResult.err) {
+        console.log('klaida===', fetchResult.err);
+        // toast.error(fetchResult.err, {
+        //   duration: 5000,
+        //   position: 'top-center',
+        // });
+        SetError(fetchResult.err);
+        return;
+      }
+      const notify = () =>
+        toast.success('Prisijungėte sėkmingai, tuoj būsite peadresuotas į pagrindinį puslapį', {
+          duration: 5000,
+          position: 'top-center',
+        });
+
+      fetchResult.msg === 'Successfully logged in' &&
+        notify() &&
+        setTimeout(() => {
+          history.replace('/');
+        }, 5000);
     },
   });
   // console.log('formik.values ===', formik.values);
   console.log('errorras', error);
+
   return (
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <h1 className={css.title}>Welcome back</h1>
-
+      <Toaster />
       <label className={css.label}>
         <span className={css.span}>Email</span>
         <input

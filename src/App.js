@@ -14,7 +14,7 @@ function App() {
     <div className='App'>
       <Header />
       <Switch>
-        <ProtectedRoute path={'/home'}>
+        <ProtectedRoute exact path={'/'}>
           <HomePage />
         </ProtectedRoute>
         <ProtectedRoute path={'/add'}>

@@ -44,7 +44,7 @@ function RegisterForm() {
       }
 
       const notify = () =>
-        toast.success('Registracija sekminga,tuoj busite perkelti i Login puslapi', {
+        toast.success('Registracija sekminga,tuoj būsite peradresuoti i Login puslapį', {
           duration: 5000,
           position: 'top-center',
         });
