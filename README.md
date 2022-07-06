@@ -4,6 +4,7 @@
 
 ## Paleidimas
 
+`npm i`
 `npm start`
 
 App'as pasileidžia [http://localhost:3000](http://localhost:3000) jusų naršyklėje.

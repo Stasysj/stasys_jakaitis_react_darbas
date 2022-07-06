@@ -36,7 +36,7 @@ function LoginForm() {
         return;
       }
       const notify = () =>
-        toast.success('Prisijungėte sėkmingai, tuoj būsite peadresuotas į pagrindinį puslapį.', {
+        toast.success('Prisijungėte sėkmingai, tuoj būsite peradresuotas į pagrindinį puslapį.', {
           duration: 4000,
           position: 'top-center',
         });
